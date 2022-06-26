@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var optenerPalabra: UITextField!
     @IBOutlet weak var mybtn: UIButton!
     @IBOutlet weak var pageControlView: UIPageControl!
+    @IBOutlet weak var mySegmente: UISegmentedControl!
+    @IBOutlet weak var mySlider: UISlider!
     
     private let datasourceView = [
         "Cambiar texto",
@@ -44,7 +46,20 @@ class ViewController: UIViewController {
         pageControlView.numberOfPages = datasourceView.count;
         pageControlView.currentPageIndicatorTintColor = .blue;
         pageControlView.pageIndicatorTintColor = .lightGray;
+    
+        // Segment control
+        mySegmente.removeAllSegments();
+        for (index,value) in datasourceView.enumerated() {
+            mySegmente.insertSegment(withTitle: value, at: index, animated: true);
+        }
+        mySegmente.selectedSegmentIndex = 0;
         
+        // Slider
+        mySlider.maximumTrackTintColor = .red;
+        mySlider.minimumTrackTintColor = .yellow;
+        mySlider.maximumValue = Float(datasourceView.count);
+        mySlider.minimumValue = 1;
+        mySlider.value = 1;
     }
 
     @IBAction func cambioNombre(_ sender: Any) {
@@ -55,6 +70,49 @@ class ViewController: UIViewController {
         myPickerView.selectRow(sender.currentPage, inComponent: 0, animated: true);
         let valueSelected = datasourceView[sender.currentPage];
         mybtn.setTitle(valueSelected, for: .normal);
+        mySegmente.selectedSegmentIndex = sender.currentPage;
+        mySlider.value = Float(sender.currentPage);
+    }
+    @IBAction func segmentControllerAction(_ sender: UISegmentedControl) {
+        myPickerView.selectRow(mySegmente.selectedSegmentIndex, inComponent: 0, animated: true);
+        let myvalue = datasourceView[mySegmente.selectedSegmentIndex];
+        mybtn.setTitle(myvalue, for: .normal);
+        pageControlView.currentPage = mySegmente.selectedSegmentIndex;
+        mySlider.value = Float(mySegmente.selectedSegmentIndex);
+    }
+    @IBAction func mySliderAction(_ sender: Any) {
+        switch mySlider.value {
+        case 1..<2:
+            myPickerView.selectRow(0, inComponent: 0, animated: true);
+            let myvalue = datasourceView[0];
+            mybtn.setTitle(myvalue, for: .normal);
+            pageControlView.currentPage = 0;
+            mySegmente.selectedSegmentIndex = 0;
+        case 2..<3:
+            myPickerView.selectRow(1, inComponent: 0, animated: true);
+            let myvalue = datasourceView[1];
+            mybtn.setTitle(myvalue, for: .normal);
+            pageControlView.currentPage = 1;
+            mySegmente.selectedSegmentIndex = 1;
+        case 3..<4:
+            myPickerView.selectRow(2, inComponent: 0, animated: true);
+            let myvalue = datasourceView[2];
+            mybtn.setTitle(myvalue, for: .normal);
+            pageControlView.currentPage = 2;
+            mySegmente.selectedSegmentIndex = 2;
+        case 4..<5:
+            myPickerView.selectRow(3, inComponent: 0, animated: true);
+            let myvalue = datasourceView[3];
+            mybtn.setTitle(myvalue, for: .normal);
+            pageControlView.currentPage = 3;
+            mySegmente.selectedSegmentIndex = 3;
+        default:
+            myPickerView.selectRow(4, inComponent: 0, animated: true);
+            let myvalue = datasourceView[4];
+            mybtn.setTitle(myvalue, for: .normal);
+            pageControlView.currentPage = 4;
+            mySegmente.selectedSegmentIndex = 4;
+        }
     }
 }
 
@@ -75,6 +133,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         pageControlView.currentPage = row;
         let myValue = datasourceView[row];
         mybtn.setTitle(myValue, for: .normal);
+        mySegmente.selectedSegmentIndex = row;
+        mySlider.value = Float(row);
     }
 }
 

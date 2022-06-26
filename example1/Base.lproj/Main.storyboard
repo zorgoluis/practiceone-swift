@@ -43,31 +43,55 @@
                                     <action selector="selectedPage:" destination="BYZ-38-t0r" eventType="valueChanged" id="R4X-fC-Wq1"/>
                                 </connections>
                             </pageControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-7E-daq">
+                                <rect key="frame" x="20" y="560" width="374" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControllerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="OoF-YY-7e0"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dkY-qk-zge">
+                                <rect key="frame" x="48" y="610" width="318" height="31"/>
+                                <connections>
+                                    <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="D2V-YE-4da"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dkY-qk-zge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="21w-gz-RkQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KUA-lN-lE1" secondAttribute="trailing" constant="134" id="3L0-KK-xLZ"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="6xs-cl-8PL"/>
                             <constraint firstItem="KUA-lN-lE1" firstAttribute="top" secondItem="YLD-Ca-7Qu" secondAttribute="bottom" constant="22" id="9TC-8S-5lT"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="top" secondItem="KUA-lN-lE1" secondAttribute="bottom" constant="85" id="9Vd-h9-P8r"/>
                             <constraint firstItem="YLD-Ca-7Qu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D38-WK-sY5"/>
+                            <constraint firstItem="dkY-qk-zge" firstAttribute="top" secondItem="Z2x-7E-daq" secondAttribute="bottom" constant="19" id="MWF-7a-Deb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cbo-j1-cub" secondAttribute="trailing" constant="100" id="Ncf-qF-tQX"/>
                             <constraint firstItem="YLD-Ca-7Qu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ShG-yM-ksI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cbo-j1-cub" secondAttribute="bottom" constant="63" id="Vtk-m5-mc9"/>
                             <constraint firstItem="lFB-Ft-nve" firstAttribute="top" secondItem="WsY-jf-i0r" secondAttribute="bottom" constant="32" id="Z4I-hF-4ti"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dkY-qk-zge" secondAttribute="trailing" constant="50" id="Zs9-eU-4P0"/>
                             <constraint firstItem="Cbo-j1-cub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="bDi-di-RDl"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eFt-OU-9go"/>
+                            <constraint firstItem="Z2x-7E-daq" firstAttribute="top" secondItem="lFB-Ft-nve" secondAttribute="bottom" constant="33" id="m6b-Vy-FSv"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSK-x3-7ob"/>
                             <constraint firstItem="KUA-lN-lE1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="pjg-sc-zXp"/>
+                            <constraint firstItem="Z2x-7E-daq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qvu-ER-ifg"/>
                             <constraint firstItem="lFB-Ft-nve" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="sfb-m2-ePV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lFB-Ft-nve" secondAttribute="trailing" constant="121" id="tTE-17-TKo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z2x-7E-daq" secondAttribute="trailing" constant="20" id="wlI-MM-Jo5"/>
                             <constraint firstItem="YLD-Ca-7Qu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="yAI-kW-LLR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="etiqueta" destination="KUA-lN-lE1" id="bWL-y4-jAO"/>
                         <outlet property="myPickerView" destination="YLD-Ca-7Qu" id="Cgg-a5-r1W"/>
+                        <outlet property="mySegmente" destination="Z2x-7E-daq" id="7Yg-r5-fzP"/>
+                        <outlet property="mySlider" destination="dkY-qk-zge" id="5UN-KS-5ui"/>
                         <outlet property="mybtn" destination="lFB-Ft-nve" id="u8Q-oP-mpt"/>
                         <outlet property="optenerPalabra" destination="WsY-jf-i0r" id="DME-Zy-Wi8"/>
                         <outlet property="pageControlView" destination="Cbo-j1-cub" id="HOb-B3-e5I"/>
