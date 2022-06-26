@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myPickerView: UIPickerView!
     @IBOutlet weak var optenerPalabra: UITextField!
     @IBOutlet weak var mybtn: UIButton!
+    @IBOutlet weak var pageControlView: UIPageControl!
     
     private let datasourceView = [
         "Cambiar texto",
@@ -38,10 +39,22 @@ class ViewController: UIViewController {
         // PickerView
         myPickerView.dataSource = self;
         myPickerView.delegate = self;
+        
+        // PageControl
+        pageControlView.numberOfPages = datasourceView.count;
+        pageControlView.currentPageIndicatorTintColor = .blue;
+        pageControlView.pageIndicatorTintColor = .lightGray;
+        
     }
 
     @IBAction func cambioNombre(_ sender: Any) {
         etiqueta.text = optenerPalabra.text;
+    }
+    
+    @IBAction func selectedPage(_ sender: UIPageControl) {
+        myPickerView.selectRow(sender.currentPage, inComponent: 0, animated: true);
+        let valueSelected = datasourceView[sender.currentPage];
+        mybtn.setTitle(valueSelected, for: .normal);
     }
 }
 
@@ -59,6 +72,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pageControlView.currentPage = row;
         let myValue = datasourceView[row];
         mybtn.setTitle(myValue, for: .normal);
     }

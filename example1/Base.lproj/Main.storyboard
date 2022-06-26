@@ -21,14 +21,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola mundo" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUA-lN-lE1">
-                                <rect key="frame" x="134" y="316" width="146" height="30"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-Ca-7Qu">
-                                <rect key="frame" x="0.0" y="78" width="414" height="216"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFB-Ft-nve">
                                 <rect key="frame" x="122" y="497" width="171" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -37,6 +29,20 @@
                                     <action selector="cambioNombre:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KqZ-uT-0nQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola mundo" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUA-lN-lE1">
+                                <rect key="frame" x="134" y="316" width="146" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-Ca-7Qu">
+                                <rect key="frame" x="0.0" y="78" width="414" height="216"/>
+                            </pickerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cbo-j1-cub">
+                                <rect key="frame" x="100" y="773" width="214" height="26"/>
+                                <connections>
+                                    <action selector="selectedPage:" destination="BYZ-38-t0r" eventType="valueChanged" id="R4X-fC-Wq1"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,8 +52,11 @@
                             <constraint firstItem="KUA-lN-lE1" firstAttribute="top" secondItem="YLD-Ca-7Qu" secondAttribute="bottom" constant="22" id="9TC-8S-5lT"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="top" secondItem="KUA-lN-lE1" secondAttribute="bottom" constant="85" id="9Vd-h9-P8r"/>
                             <constraint firstItem="YLD-Ca-7Qu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D38-WK-sY5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cbo-j1-cub" secondAttribute="trailing" constant="100" id="Ncf-qF-tQX"/>
                             <constraint firstItem="YLD-Ca-7Qu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ShG-yM-ksI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cbo-j1-cub" secondAttribute="bottom" constant="63" id="Vtk-m5-mc9"/>
                             <constraint firstItem="lFB-Ft-nve" firstAttribute="top" secondItem="WsY-jf-i0r" secondAttribute="bottom" constant="32" id="Z4I-hF-4ti"/>
+                            <constraint firstItem="Cbo-j1-cub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="bDi-di-RDl"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eFt-OU-9go"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSK-x3-7ob"/>
                             <constraint firstItem="KUA-lN-lE1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="pjg-sc-zXp"/>
@@ -61,6 +70,7 @@
                         <outlet property="myPickerView" destination="YLD-Ca-7Qu" id="Cgg-a5-r1W"/>
                         <outlet property="mybtn" destination="lFB-Ft-nve" id="u8Q-oP-mpt"/>
                         <outlet property="optenerPalabra" destination="WsY-jf-i0r" id="DME-Zy-Wi8"/>
+                        <outlet property="pageControlView" destination="Cbo-j1-cub" id="HOb-B3-e5I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
