@@ -59,6 +59,12 @@
                                     <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="D2V-YE-4da"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2mg-hm-9oI">
+                                <rect key="frame" x="160" y="677" width="94" height="32"/>
+                                <connections>
+                                    <action selector="onchangeStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="ax8-AW-dwX"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,6 +74,7 @@
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="6xs-cl-8PL"/>
                             <constraint firstItem="KUA-lN-lE1" firstAttribute="top" secondItem="YLD-Ca-7Qu" secondAttribute="bottom" constant="22" id="9TC-8S-5lT"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="top" secondItem="KUA-lN-lE1" secondAttribute="bottom" constant="85" id="9Vd-h9-P8r"/>
+                            <constraint firstItem="2mg-hm-9oI" firstAttribute="centerX" secondItem="dkY-qk-zge" secondAttribute="centerX" id="Ckr-EP-Bdl"/>
                             <constraint firstItem="YLD-Ca-7Qu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D38-WK-sY5"/>
                             <constraint firstItem="dkY-qk-zge" firstAttribute="top" secondItem="Z2x-7E-daq" secondAttribute="bottom" constant="19" id="MWF-7a-Deb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cbo-j1-cub" secondAttribute="trailing" constant="100" id="Ncf-qF-tQX"/>
@@ -77,6 +84,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dkY-qk-zge" secondAttribute="trailing" constant="50" id="Zs9-eU-4P0"/>
                             <constraint firstItem="Cbo-j1-cub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="bDi-di-RDl"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eFt-OU-9go"/>
+                            <constraint firstItem="2mg-hm-9oI" firstAttribute="top" secondItem="dkY-qk-zge" secondAttribute="bottom" constant="37" id="j4H-lF-Yta"/>
                             <constraint firstItem="Z2x-7E-daq" firstAttribute="top" secondItem="lFB-Ft-nve" secondAttribute="bottom" constant="33" id="m6b-Vy-FSv"/>
                             <constraint firstItem="WsY-jf-i0r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSK-x3-7ob"/>
                             <constraint firstItem="KUA-lN-lE1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="pjg-sc-zXp"/>
@@ -95,6 +103,7 @@
                         <outlet property="mybtn" destination="lFB-Ft-nve" id="u8Q-oP-mpt"/>
                         <outlet property="optenerPalabra" destination="WsY-jf-i0r" id="DME-Zy-Wi8"/>
                         <outlet property="pageControlView" destination="Cbo-j1-cub" id="HOb-B3-e5I"/>
+                        <outlet property="stepperView" destination="2mg-hm-9oI" id="i3c-Qt-A7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pageControlView: UIPageControl!
     @IBOutlet weak var mySegmente: UISegmentedControl!
     @IBOutlet weak var mySlider: UISlider!
+    @IBOutlet weak var stepperView: UIStepper!
     
     private let datasourceView = [
         "Cambiar texto",
@@ -60,6 +61,9 @@ class ViewController: UIViewController {
         mySlider.maximumValue = Float(datasourceView.count);
         mySlider.minimumValue = 1;
         mySlider.value = 1;
+        // stepper
+        stepperView.minimumValue = 0;
+        stepperView.maximumValue = Double(datasourceView.count);
     }
 
     @IBAction func cambioNombre(_ sender: Any) {
@@ -113,6 +117,14 @@ class ViewController: UIViewController {
             pageControlView.currentPage = 4;
             mySegmente.selectedSegmentIndex = 4;
         }
+    }
+    
+    @IBAction func onchangeStepper(_ sender: UIStepper) {
+        print(stepperView.value);
+        mySlider.value = Float(sender.value);
+        myPickerView.selectRow(Int(sender.value), inComponent: 0, animated: true);
+        mySegmente.selectedSegmentIndex = Int(sender.value);
+        pageControlView.currentPage = Int(sender.value);
     }
 }
 
