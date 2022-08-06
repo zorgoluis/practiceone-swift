@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySegmente: UISegmentedControl!
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var stepperView: UIStepper!
+    @IBOutlet weak var mySwitch: UISwitch!
+    @IBOutlet weak var myProgress: UIActivityIndicatorView!
     
     private let datasourceView = [
         "Cambiar texto",
@@ -61,9 +63,17 @@ class ViewController: UIViewController {
         mySlider.maximumValue = Float(datasourceView.count);
         mySlider.minimumValue = 1;
         mySlider.value = 1;
+        
         // stepper
         stepperView.minimumValue = 0;
         stepperView.maximumValue = Double(datasourceView.count);
+        
+        // Switch
+        mySwitch.isOn = true;
+        mySwitch.onTintColor = .purple;
+        
+        // Progress
+        myProgress.hidesWhenStopped = true;
     }
 
     @IBAction func cambioNombre(_ sender: Any) {
@@ -125,6 +135,16 @@ class ViewController: UIViewController {
         myPickerView.selectRow(Int(sender.value), inComponent: 0, animated: true);
         mySegmente.selectedSegmentIndex = Int(sender.value);
         pageControlView.currentPage = Int(sender.value);
+    }
+    
+    @IBAction func onChngeSwitch(_ sender: UISwitch) {
+        if(!sender.isOn){
+            myPickerView.isHidden = true;
+            myProgress.startAnimating();
+        }else{
+            myPickerView.isHidden = false;
+            myProgress.stopAnimating();
+        }
     }
 }
 
