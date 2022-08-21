@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         etiqueta.text = "Bienvenido";
+        optenerPalabra.delegate = self;
         
         // Button
         mybtn.backgroundColor = .brown;
@@ -167,6 +168,16 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         mybtn.setTitle(myValue, for: .normal);
         mySegmente.selectedSegmentIndex = row;
         mySlider.value = Float(row);
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        etiqueta.text = textField.text;
     }
 }
 
